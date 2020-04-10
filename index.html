@@ -130,6 +130,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-反编译jar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/10/%E5%8F%8D%E7%BC%96%E8%AF%91jar/">反编译jar</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/10/%E5%8F%8D%E7%BC%96%E8%AF%91jar/" class="archive-article-date">
+  	<time datetime="2020-04-10T14:06:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CFR-Class-File-Reader"><a href="#CFR-Class-File-Reader" class="headerlink" title="CFR(Class File Reader)"></a>CFR(Class File Reader)</h3><p>下载地址：</p>
+<p><a href="https://github.com/leibnitz27/cfr" target="_blank" rel="noopener">https://github.com/leibnitz27/cfr</a></p>
+<p><a href="https://mvnrepository.com/artifact/org.benf/cfr" target="_blank" rel="noopener">https://mvnrepository.com/artifact/org.benf/cfr</a></p>
+<p><a href="https://www.benf.org/other/cfr/" target="_blank" rel="noopener">https://www.benf.org/other/cfr/</a></p>
+<p>下载下来是一个jar包。</p>
+<h4 id="反编译jar包"><a href="#反编译jar包" class="headerlink" title="反编译jar包"></a>反编译jar包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将target.jar包反编译到当前目录下的targetDir文件夹</span></span><br><span class="line">java -jar cfr-0.149.jar target.jar --outputdir targetDir</span><br></pre></td></tr></table></figure>
+
+<h4 id="反编译Class文件"><a href="#反编译Class文件" class="headerlink" title="反编译Class文件"></a>反编译Class文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar cfr-0.149.jar JavaTest.class</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="包装成脚本"><a href="#包装成脚本" class="headerlink" title="包装成脚本"></a>包装成脚本</h4><h5 id="反编译某个class文件"><a href="#反编译某个class文件" class="headerlink" title="反编译某个class文件"></a>反编译某个class文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ~/Documents/scripts/cfr-0.139.jar <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="反编译某个jar包"><a href="#反编译某个jar包" class="headerlink" title="反编译某个jar包"></a>反编译某个jar包</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ~/Documents/scripts/cfr-0.139.jar <span class="variable">$1</span> --outputdir <span class="variable">$2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>参考资料：<a href="https://droidyue.com/blog/2019/02/24/decompile-class-file-command-line/" target="_blank" rel="noopener">https://droidyue.com/blog/2019/02/24/decompile-class-file-command-line/</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jar</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">反编译</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cfr</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/10/%E5%8F%8D%E7%BC%96%E8%AF%91jar/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-使用Hexo部署博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -412,6 +513,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cfr</a>
               </li>
             
             <div class="clearfix"></div>
