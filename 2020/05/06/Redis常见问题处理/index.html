@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Will的博客</title>
+  <title>Redis常见问题处理 | Will的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="原文地址：https:&#x2F;&#x2F;javasgl.github.io&#x2F;handle-cache-problems&#x2F; 缓存使用过过程中常见问题基本是以下几个问题：  缓存穿透问题 缓存并发问题 热点数据问题 数据一致问题  这些问题不是独立的，一般都会存在因果关系或者同时存在 下面列举一下问题原因及基本解决思路 缓存穿透&#x2F;过期缓存穿透问题是指请求数据在缓存中没有找到，导致请求直接打到数据库的情况 这种场景下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/03/31/hello-world/index.html">
+<meta property="og:title" content="Redis常见问题处理">
+<meta property="og:url" content="http://yoursite.com/2020/05/06/Redis%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Will的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="原文地址：https:&#x2F;&#x2F;javasgl.github.io&#x2F;handle-cache-problems&#x2F; 缓存使用过过程中常见问题基本是以下几个问题：  缓存穿透问题 缓存并发问题 热点数据问题 数据一致问题  这些问题不是独立的，一般都会存在因果关系或者同时存在 下面列举一下问题原因及基本解决思路 缓存穿透&#x2F;过期缓存穿透问题是指请求数据在缓存中没有找到，导致请求直接打到数据库的情况 这种场景下">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-31T13:20:13.954Z">
-<meta property="article:modified_time" content="2020-03-31T13:20:13.954Z">
+<meta property="article:published_time" content="2020-05-06T13:06:29.000Z">
+<meta property="article:modified_time" content="2020-05-06T13:07:19.917Z">
 <meta property="article:author" content="Will">
+<meta property="article:tag" content="redis">
+<meta property="article:tag" content="缓存">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Will的博客" type="application/atom+xml">
@@ -132,39 +134,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Redis常见问题处理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Redis常见问题处理
     </h1>
   
 
         
-        <a href="/2020/03/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-31T13:20:13.954Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
+        <a href="/2020/05/06/Redis%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-05-06T13:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>原文地址：<a href="https://javasgl.github.io/handle-cache-problems/" target="_blank" rel="noopener">https://javasgl.github.io/handle-cache-problems/</a></p>
+<p>缓存使用过过程中常见问题基本是以下几个问题：</p>
+<ul>
+<li>缓存穿透问题</li>
+<li>缓存并发问题</li>
+<li>热点数据问题</li>
+<li>数据一致问题</li>
+</ul>
+<p>这些问题不是独立的，一般都会存在因果关系或者同时存在</p>
+<p>下面列举一下问题原因及基本解决思路</p>
+<h2 id="缓存穿透-过期"><a href="#缓存穿透-过期" class="headerlink" title="缓存穿透/过期"></a>缓存穿透/过期</h2><p>缓存穿透问题是指请求数据在缓存中没有找到，导致请求直接打到数据库的情况</p>
+<p>这种场景下，大致有两类原因可以导致这类问题：</p>
+<ul>
+<li>1.缓存中没有命中，查询数据库，数据库无此数据，不会去更新缓存，这样导致下次同样的请求都会重复这样的请求，每次都会请求数据库</li>
+<li>2.由于缓存过期时间设置不合理，导致瞬时大量缓存过期，大量请求直接打到数据库</li>
+</ul>
+<p>原因 1 的解决方案:<br>为数据设置默认值，即使从数据库没有查询到，也设置缓存，之后数据有值了去主动更新缓存</p>
+<blockquote>
+<p>这样虽然可以避免查询一直不存在的数据而导致的缓存穿透问题，但是也容易引起恶意攻击，攻击方式：构造大量无效的条件去查询，这样导致缓存中大量的存在默认缓存，导致缓存占用量急剧增大而引起缓存驱逐,针对这种方式，可以为默认缓存设置一些比较短的过期时间来稍微缓解这一问题,只是缓解，无法完全解决这个攻击</p>
+</blockquote>
+<p>原因 2 的解决方案：</p>
+<blockquote>
+<p>不要设置统一的过期时间，为过期时间添加随机数,让数据过期时间分散开，不要集中在同一时间过期</p>
+</blockquote>
+<h2 id="缓存并发"><a href="#缓存并发" class="headerlink" title="缓存并发"></a>缓存并发</h2><p>缓存并发问题是指多个请求请求同一个数据，而且都没有从缓存中获取到数据，并从数据库查询后都去更新缓存，导致缓存重复更新问题<br>大多数场景下，这个问题影响并不大，只是会产生一些重复的数据库查询和重复更新缓存<br>但是如果有些缓存不能重复更新，比如一些自动设置的时间、计数器等，那么重复更新会带来问题</p>
+<p>这个问题的解决方案：</p>
+<blockquote>
+<p>使用<code>CAS</code>方案，即设置缓存之前先检查是否已经设置了，如果设置过，则不作任何操作<br>如果是使用<code>redis</code>,则可以直接使用其<code>SETNX</code>命令</p>
+</blockquote>
+<h2 id="热点数据"><a href="#热点数据" class="headerlink" title="热点数据"></a>热点数据</h2><p>绝大多数系统中，频繁访问的数据只是一小部分，而受硬件、成本等因素，把所有的数据都放在缓存中也不太现实</p>
+<blockquote>
+<p>这个问题，可以使用日志分析、访问计数等方式统计热点数据，基于历史访问情况刷新<code>TOP-N</code>数据到缓存中，并且不定时的去更新这个<code>TOP-N</code>列表</p>
+</blockquote>
+<h2 id="数据一致问题"><a href="#数据一致问题" class="headerlink" title="数据一致问题"></a>数据一致问题</h2><p>这个问题一般比较难弄，只要使用缓存，则必然可能出现缓存不一致的问题,这个问题和使用缓存更新策略有很大的关系，具体问题需要根据不同的缓存更新方式来定制化解决，不能一概而论</p>
+<blockquote>
+<p>这个问题基本思路是使用补偿机制，即使用定时、不定时巡检的方式，刷新缓存数据，保证数据一致性</p>
+</blockquote>
 
       
 
@@ -199,6 +225,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -249,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/31/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/06/Redis%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,15 +304,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/01/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用Hexo部署博客
-        
-      </div>
-    </a>
   
+    <a href="/2020/05/05/MySQL%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL索引优化分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
